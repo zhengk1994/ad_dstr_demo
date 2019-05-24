@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ads</h1>
+<h1>Your Advertisements</h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= ad.img %></td>
         <td><%= ad.price %></td>
         <td><%= ad.url %></td>
-        <td><%= link_to 'Show', ad %></td>
-        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to '更新', edit_ad_path(ad) %></td>
+        <td><%= link_to '削除', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

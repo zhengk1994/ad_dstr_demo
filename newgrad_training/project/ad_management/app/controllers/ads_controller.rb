@@ -9,8 +9,10 @@ class AdsController < ApplicationController
 
   # GET /ads/1
   # GET /ads/1.json
-  def show
-  end
+  
+  #def show
+    #@ad = Ad.find(params[:id])
+  #end
 
   # GET /ads/new
   def new
@@ -19,46 +21,37 @@ class AdsController < ApplicationController
 
   # GET /ads/1/edit
   def edit
+    @ad = Ad.find(params[:id])
   end
 
   # POST /ads
   # POST /ads.json
   def create
     @ad = Ad.new(ad_params)
-
-    respond_to do |format|
-      if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
-        format.json { render :show, status: :created, location: @ad }
-      else
-        format.html { render :new }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
-    end
+     if @ad.save
+       redirect_to @ad
+     else
+       render 'new'
+     end
   end
 
   # PATCH/PUT /ads/1
   # PATCH/PUT /ads/1.json
   def update
-    respond_to do |format|
-      if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ad }
+    @ad = Ad.find(params[:id])
+      if @ad.update_attributes(ad_params)
+        redirect_to @ad
       else
-        format.html { render :edit }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
+
   end
 
   # DELETE /ads/1
   # DELETE /ads/1.json
   def destroy
-    @ad.destroy
-    respond_to do |format|
-      format.html { redirect_to ads_url, notice: 'Ad was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    Ad.find(params[:id]).destroy
+    redirect_to ads_url
   end
 
   private
