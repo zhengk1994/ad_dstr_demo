@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Picture:</strong>
+  <%= image_tag @ad.picture.url if @ad.picture? %>
+</p>
+
+<p>
   <strong>Price:</strong>
   <%= @ad.price %>
 </p>
