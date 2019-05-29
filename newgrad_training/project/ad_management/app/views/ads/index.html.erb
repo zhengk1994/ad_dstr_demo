@@ -21,7 +21,7 @@
         <td><%= ad.price %></td>
         <td><%= ad.url %></td>
 
-        <td><%= link_to 'Show', ad %></td>
+        <td><%= link_to '詳細', ad %></td>
         <td><%= link_to '更新', edit_ad_path(ad) %></td>
         <td><%= link_to '削除', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Ad', new_ad_path %>
+<%= link_to '入稿', new_ad_path %>
