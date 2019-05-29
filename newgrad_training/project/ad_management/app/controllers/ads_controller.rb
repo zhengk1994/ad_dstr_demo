@@ -71,4 +71,5 @@ class AdsController < ApplicationController
     def ad_params
       params.require(:ad).permit(:body, :img, :price, :url, :picture)
     end
+
 end
