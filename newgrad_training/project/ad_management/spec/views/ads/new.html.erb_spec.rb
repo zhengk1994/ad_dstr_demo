@@ -4,7 +4,7 @@ RSpec.describe "ads/new", type: :view do
   before(:each) do
     assign(:ad, Ad.new(
       :body => "MyString",
-      :img => "MyString",
+    #  :img => "MyString", img tag is no more in this page.
       :price => "MyString",
       :url => "MyString"
     ))
@@ -17,7 +17,7 @@ RSpec.describe "ads/new", type: :view do
 
       assert_select "input[name=?]", "ad[body]"
 
-      assert_select "input[name=?]", "ad[img]"
+      # assert_select "input[name=?]", "ad[img]" img tag is no more in this page.
 
       assert_select "input[name=?]", "ad[price]"
 
