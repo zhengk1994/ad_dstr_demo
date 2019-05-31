@@ -28,47 +28,61 @@ RSpec.describe AdsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Ad. As you add validations to Ad, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  #let(:valid_attributes) {
+    #skip("Add a hash of attributes valid for your model")
+  #}
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  #let(:invalid_attributes) {
+    #skip("Add a hash of attributes invalid for your model")
+  #}
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # AdsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  #let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
-      Ad.create! valid_attributes
-      get :index, params: {}, session: valid_session
+  describe 'GET #index' do
+    it 'returns a success response' do
+      get :index
       expect(response).to be_successful
+    end
+
+    it 'render the :index template' do
+      get :index
+      expect(response).to render_template :index
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      ad = Ad.create! valid_attributes
-      get :show, params: {id: ad.to_param}, session: valid_session
+  #describe "GET #show" do
+    #it "returns a success response" do
+      #get :show
+      #expect(response).to be_successful
+    #end
+  #end
+
+  describe 'GET #new' do
+    it 'returns a success response' do
+      get :new
       expect(response).to be_successful
+    end
+
+    it 'render the :new template' do
+      get :new
+      expect(response).to render_template :new
     end
   end
 
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
+  describe 'GET #edit' do
+    let(:ad) { create(:ad) }
+
+    it 'returns a success response' do
+      get :edit, params: { id: ad.to_param }
       expect(response).to be_successful
     end
-  end
 
-  describe "GET #edit" do
-    it "returns a success response" do
-      ad = Ad.create! valid_attributes
-      get :edit, params: {id: ad.to_param}, session: valid_session
-      expect(response).to be_successful
+    it 'render the :edit template' do
+      get :edit, params: { id: ad.to_param }
+      expect(response).to render_template :edit
     end
   end
 
@@ -76,66 +90,84 @@ RSpec.describe AdsController, type: :controller do
     context "with valid params" do
       it "creates a new Ad" do
         expect {
-          post :create, params: {ad: valid_attributes}, session: valid_session
+          post :create, params: { 'ad' => { 'body' => '1234', 'price' => '30', 'url' => 'zhengk1994@gmail.com' }}
         }.to change(Ad, :count).by(1)
       end
 
       it "redirects to the created ad" do
-        post :create, params: {ad: valid_attributes}, session: valid_session
+        post :create, params: { 'ad' => { 'body' => '1234', 'price' => '30', 'url' => 'zhengk1994@gmail.com' }}
         expect(response).to redirect_to(Ad.last)
       end
     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {ad: invalid_attributes}, session: valid_session
+    context 'with invalid params' do
+      it 'creates a new Ad' do
+        expect {
+          post :create, params: { 'ad' => { 'body' => '', 'price' => '', 'url' => '' }}
+        }.to change(Ad, :count).by(0)
+      end
+
+      it 'returns a success response (i.e. to display the "new" template)' do
+        post :create, params: { 'ad' => { 'body' => '', 'price' => '', 'url' => '' }}
         expect(response).to be_successful
+      end
+
+      it 'render the :new template' do
+        post :create, params: { 'ad' => { 'body' => '', 'price' => '', 'url' => '' }}
+        expect(response).to render_template :new
       end
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PUT #update' do
+    let!(:ad) { create(:ad) }
 
-      it "updates the requested ad" do
-        ad = Ad.create! valid_attributes
-        put :update, params: {id: ad.to_param, ad: new_attributes}, session: valid_session
-        ad.reload
-        skip("Add assertions for updated state")
+    context 'with valid params' do
+      it 'updates the requested user does not change the num of data' do
+        expect {
+          put :update, params: { id: ad.to_param, 'ad' => { 'body' => '1111111' }}
+        }.to change(Ad, :count).by(0)
       end
 
-      it "redirects to the ad" do
-        ad = Ad.create! valid_attributes
-        put :update, params: {id: ad.to_param, ad: valid_attributes}, session: valid_session
+      it 'redirects to the ad' do
+        put :update, params: { id: ad.to_param, 'ad' => { 'body' => '1111111' }}
         expect(response).to redirect_to(ad)
       end
     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        ad = Ad.create! valid_attributes
-        put :update, params: {id: ad.to_param, ad: invalid_attributes}, session: valid_session
+    context 'with invalid params' do
+      it 'returns a success response (i.e. to display the "edit" template)' do
+        put :update, params: { id: ad.to_param, 'ad' => { 'body' => '', 'price' => '', 'url' => ''}}
         expect(response).to be_successful
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested ad" do
-      ad = Ad.create! valid_attributes
+
+
+  describe 'DELETE #destroy' do
+    let!(:ad) { create(:ad) }
+
+    it 'destroys the requested ad' do
       expect {
-        delete :destroy, params: {id: ad.to_param}, session: valid_session
+        delete :destroy, params: { id: ad.to_param }
       }.to change(Ad, :count).by(-1)
     end
 
-    it "redirects to the ads list" do
-      ad = Ad.create! valid_attributes
-      delete :destroy, params: {id: ad.to_param}, session: valid_session
+    it 'redirects to the ads list' do
+      delete :destroy, params: { id: ad.to_param }
       expect(response).to redirect_to(ads_url)
     end
   end
 
 end
+
+#describe "GET #index" do
+
+#  it "returns a success response" do
+
+#    Ad.create! valid_attributes
+    #get :index, params: {}, session: valid_session
+    #expect(response).to be_successful
+  #end
+#end

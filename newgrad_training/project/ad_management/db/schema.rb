@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_063907) do
 
   create_table "ads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body"
-    t.string "img"
+    #t.string "img"
     t.string "price"
     t.string "url"
     t.datetime "created_at", null: false

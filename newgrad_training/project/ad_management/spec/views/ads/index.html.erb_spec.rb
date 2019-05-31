@@ -5,13 +5,13 @@ RSpec.describe "ads/index", type: :view do
     assign(:ads, [
       Ad.create!(
         :body => "Body",
-        :img => "Img",
+      #　:img => "Img", img tag is no more in this page.
         :price => "Price",
         :url => "Url"
       ),
       Ad.create!(
         :body => "Body",
-        :img => "Img",
+      #  :img => "Img", img tag is no more in this page.
         :price => "Price",
         :url => "Url"
       )
@@ -21,7 +21,7 @@ RSpec.describe "ads/index", type: :view do
   it "renders a list of ads" do
     render
     assert_select "tr>td", :text => "Body".to_s, :count => 2
-    assert_select "tr>td", :text => "Img".to_s, :count => 2
+  #  assert_select "tr>td", :text => "Img".to_s, :count => 2 img tag is no more in this page.
     assert_select "tr>td", :text => "Price".to_s, :count => 2
     assert_select "tr>td", :text => "Url".to_s, :count => 2
   end

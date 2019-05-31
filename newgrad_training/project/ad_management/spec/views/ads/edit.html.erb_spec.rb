@@ -4,7 +4,7 @@ RSpec.describe "ads/edit", type: :view do
   before(:each) do
     @ad = assign(:ad, Ad.create!(
       :body => "MyString",
-      :img => "MyString",
+     #  :img => "MyString",
       :price => "MyString",
       :url => "MyString"
     ))
@@ -17,7 +17,7 @@ RSpec.describe "ads/edit", type: :view do
 
       assert_select "input[name=?]", "ad[body]"
 
-      assert_select "input[name=?]", "ad[img]"
+    #  assert_select "input[name=?]", "ad[img]"
 
       assert_select "input[name=?]", "ad[price]"
 
