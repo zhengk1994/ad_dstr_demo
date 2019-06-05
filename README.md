@@ -15,6 +15,8 @@
 * `gem install bundler`
 * `bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"`
 * `bundle install --path vendor/bundle`
+* `gem install carrierwave`
+* `brew install ImageMagick`
 
 
 ## 初めて起動の前
