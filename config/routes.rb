@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'adsapi/click'
+  get 'adsapi/view'
+
+
+
   resources :ads
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'ads#index'
   root 'users#index'
