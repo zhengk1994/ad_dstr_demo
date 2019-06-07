@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  get 'adsapi/click'
+  get 'adsapi/view'
+
+
+
   resources :ads
-  resources :users
+  #resources :users
 
   #namespace :api do
     #namespace :v1 do
