@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'adsapi/click'
-  get 'adsapi/view'
+  get '/view' => 'adsapi#view'
+  get '/view' => 'adsapi#click'
 
 
 
