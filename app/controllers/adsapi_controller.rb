@@ -21,7 +21,7 @@ class AdsapiController < ApplicationController
       ad.save
 
       render status: 500, json: { status: 500, message: 'Not existed!' }
-    end 
+    end
   end
 
   def view
@@ -37,12 +37,15 @@ class AdsapiController < ApplicationController
       ad.save        #count the impression of the ad
 
       array.push(
+
          img_url: ad.picture,
          body: ad.body,
          ad_id: ad.id
       )
       end
      render json: array  #read out the json
+
+     #render status: 500, json: { status: 500, message: 'Not existed!' }
   end
 
 end
