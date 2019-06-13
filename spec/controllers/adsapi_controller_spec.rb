@@ -16,4 +16,5 @@ RSpec.describe AdsapiController, type: :controller do
     end
   end
 
+  
 end
