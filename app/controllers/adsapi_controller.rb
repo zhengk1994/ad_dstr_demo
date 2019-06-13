@@ -8,19 +8,21 @@ class AdsapiController < ApplicationController
       else
         ad.click += 1
       end
-      ad.price = params[:price]
       ad.save
+
+      #ad.price = params[:price]
+      #ad.save
 
     else
       ad = Ad.new
       if ad.click.nil?
-        ad.click =1
+        ad.click = 1
       else
         ad.click += 1
       end
       ad.save
 
-      render status: 500, json: { status: 500, message: 'Not existed!' }
+    #render status: 500, json: { status: 500, message: 'Not existed!' }
     end
   end
 
@@ -47,5 +49,9 @@ class AdsapiController < ApplicationController
 
      #render status: 500, json: { status: 500, message: 'Not existed!' }
   end
+
+private
+def count_p
+end
 
 end
