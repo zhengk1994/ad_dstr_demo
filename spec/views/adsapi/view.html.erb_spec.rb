@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "adsapi/view.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# RSpec.describe "adsapi/view.html.erb", type: :view do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end

@@ -5,7 +5,7 @@ RSpec.describe "ads/show", type: :view do
     @ad = assign(:ad, Ad.create!(
       :body => "Body",
       :picture => "Img",
-      :price => "Price",
+      :price => "30",
       :url => "Url"
     ))
   end
