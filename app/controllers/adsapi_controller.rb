@@ -47,7 +47,7 @@ class AdsapiController < ApplicationController
       end
      render json: array  #read out the json
 
-     render status: 500, json: { status: 500, message: 'Not existed!' }
+     #render status: 500, json: { status: 500, message: 'Not existed!' }
   end
 
 private
