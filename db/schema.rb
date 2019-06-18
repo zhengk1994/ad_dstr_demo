@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_07_024852) do
+ActiveRecord::Schema.define(version: 2019_06_17_074024) do
 
   create_table "ads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 2019_06_07_024852) do
   create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "imp"
+    t.integer "click"
+    t.float "ctr"
+    t.integer "cpm"
+    t.integer "totalcost"
+    t.integer "ad_id"
+    t.integer "adspot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
