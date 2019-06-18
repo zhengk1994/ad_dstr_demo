@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   # get 'users/new'
   # get 'users/edit'
   # get 'users/show'
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 end
