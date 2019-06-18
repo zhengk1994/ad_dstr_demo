@@ -53,13 +53,17 @@ class AdsapiController < ApplicationController
         report = Report.new(ad_id: ad.id, adspot_id: params[:adspot_id])
       end
 
+
       if report.imp.nil?
         report.imp = 1
       else
       report.imp += 1
       report.save
       p report.imp
-    end 
+      end
+   # else
+   #   render status: 500, json: { status: 500, message: 'Not existed!' }
+   # end
 
       array.push(
          img_url: ad.picture,
