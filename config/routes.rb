@@ -5,41 +5,15 @@ Rails.application.routes.draw do
 
 
   resources :ads
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #resources :users
   root 'ads#index'
-  root 'users#index'
 
-
-
-
-  get 'users/index'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/show'
 
   get 'ads/index'
   get 'ads/new'
   get 'ads/edit'
-  get 'ads/shouw'
+  get 'ads/show'
 
 
 
-  # root 'users#index'
-
-  # get 'users/index'
-  # get 'users/new'
-  # get 'users/edit'
-  # get 'users/show'
-
-  # get 'ads/index'
-  # get 'ads/new'
-  # get 'ads/edit'
-  # get 'ads/show'
-
-  # get 'users/index'
-  # get 'users/new'
-  # get 'users/edit'
-  # get 'users/show'
-  get '*not_found' => 'application#routing_error'
-  post '*not_found' => 'application#routing_error'
 end
