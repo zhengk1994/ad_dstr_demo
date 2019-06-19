@@ -30,7 +30,7 @@ class AdsapiController < ApplicationController
       p report.totalcost
 
     else
-      render status: 500, json: {status: 500, message: 'Not existed!'}
+      render status: 400, json: {status: 400, message: 'Not existed!'}
     end
 
     #render status: 500, json: { status: 500, message: 'Not existed!' }
