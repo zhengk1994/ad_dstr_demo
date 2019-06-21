@@ -44,14 +44,4 @@ class AdsapiController < ApplicationController
 
   end
 
-  private
-
-    def set_ad
-      @ad = Ad.find(params[:id])
-    end
-
-    def ad_params
-      params.require(:ad).permit(:body, :img, :price, :url, :picture)
-    end
-
 end
