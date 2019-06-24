@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<p>
+  <strong>Imp:</strong>
+  <%= @report.imp %>
+</p>
+
+<p>
+  <strong>Click:</strong>
+  <%= @report.click %>
+</p>
+
+<p>
+  <strong>CTR:</strong>
+  <%= @report.ctr %>
+</p>
+
+<p>
+  <strong>CPM:</strong>
+  <%= @report.cpm %>
+</p>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

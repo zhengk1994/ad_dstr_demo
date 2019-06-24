@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :set_ad, only: [:show, :edit, :update, :destroy, :showreport]
 
   def index
     @ads = Ad.all
@@ -7,6 +7,10 @@ class AdsController < ApplicationController
 
   def show
     @ad = Ad.find(params[:id])
+  end
+
+  def showreport
+    @report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
   end
 
   def new
@@ -54,8 +58,16 @@ class AdsController < ApplicationController
       @ad = Ad.find(params[:id])
     end
 
+    # def set_report
+    #   @report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
+    # end
+
     def ad_params
       params.require(:ad).permit(:body, :img, :price, :url, :picture)
+    end
+
+    def report_params
+      params.require(:report).permit(:ad_id, :adspot_id, :imp, :click, :ctr, :cpm, :totalcost, :date)
     end
 
 end
