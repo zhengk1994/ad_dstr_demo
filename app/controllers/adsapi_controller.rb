@@ -1,22 +1,6 @@
 # frozen_string_literal: true
 
 class AdsapiController < ApplicationController
-  def click
-    if report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
-      if report.click.nil?
-        report.click = 1
-      else
-        report.click += 1
-      end
-
-      report.save
-
-
-    else
-      render status: 400, json: { status: 400, message: 'Not existed!' }
-    end
-
-  end
 
   def view
     array = [] # initial the list
@@ -40,8 +24,30 @@ class AdsapiController < ApplicationController
         ad_id: ad.id
       )
     end
+
+    # Report.import reports, on_duplicate_key_update: [:imp]
     render json: array # read out the json
 
   end
+
+
+  def click
+    # ad = Ad.find_by(target_ids)
+    if report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
+      if report.click.nil?
+        report.click = 1
+        report.totalcost = Ad.find(params[:ad_id]).price
+      else
+        report.click += 1
+        report.totalcost += Ad.find(params[:ad_id]).price
+      end
+        report.save
+
+    else
+      render status: 400, json: { status: 400, message: 'Not existed!' }
+    end
+
+  end
+
 
 end
