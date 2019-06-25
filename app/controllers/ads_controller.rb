@@ -10,7 +10,6 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
   end
 
-
   def new
     @ad = Ad.new
   end
@@ -58,10 +57,6 @@ class AdsController < ApplicationController
 
     def ad_params
       params.require(:ad).permit(:body, :img, :price, :url, :picture)
-    end
-
-    def report_params
-      params.require(:report).permit(:ad_id, :adspot_id, :imp, :click, :ctr, :cpm, :totalcost, :date)
     end
 
 end

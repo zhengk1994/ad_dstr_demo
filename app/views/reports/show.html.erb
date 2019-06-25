@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Body:</strong>
+  <%= @ad.body %>
+</p>
 
-
+<p>
+  <strong>Ad_id:</strong>
+  <%= @report.ad_id %>
+</p>
 
 <p>
   <strong>Imp:</strong>
@@ -23,5 +30,10 @@
   <%= @report.cpm %>
 </p>
 
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+<p>
+  <strong>TotalCost:</strong>
+  <%= @report.totalcost %>
+</p>
+
+
+<%= link_to 'Back', reports_path %>
