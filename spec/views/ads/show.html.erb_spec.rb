@@ -4,8 +4,8 @@ RSpec.describe "ads/show", type: :view do
   before(:each) do
     @ad = assign(:ad, Ad.create!(
       :body => "Body",
-      # :img => "Img", img tag is deleted from this page.
-      :price => "Price",
+      :picture => "Img",
+      :price => "30",
       :url => "Url"
     ))
   end
@@ -13,7 +13,7 @@ RSpec.describe "ads/show", type: :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Body/)
-    #expect(rendered).to match(/Img/), img tag is deleted from this page.
+    expect(rendered).to match(/Picture/)
     expect(rendered).to match(/Price/)
     expect(rendered).to match(/Url/)
   end
