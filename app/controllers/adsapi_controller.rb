@@ -22,7 +22,7 @@ class AdsapiController < ApplicationController
       # end
 
       array.push(
-        img_url: ad.picture,
+        img_url: ad.picture.url,
         body: ad.body,
         ad_id: ad.id
       )
