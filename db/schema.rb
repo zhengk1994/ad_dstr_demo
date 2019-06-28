@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_06_17_074024) do
+=======
+ActiveRecord::Schema.define(version: 2019_06_27_081836) do
+>>>>>>> 9c79657a... delete useless files and redesign html
 
   create_table "ads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body"
@@ -24,13 +28,6 @@ ActiveRecord::Schema.define(version: 2019_06_17_074024) do
     t.integer "click"
   end
 
-  create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "imp"
     t.integer "click"
@@ -41,13 +38,18 @@ ActiveRecord::Schema.define(version: 2019_06_17_074024) do
     t.integer "adspot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.date "date"
+    t.string "ad_body"
+>>>>>>> 9c79657a... delete useless files and redesign html
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  #   t.string "name"
+  #   t.string "email"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  # end
 
 end
