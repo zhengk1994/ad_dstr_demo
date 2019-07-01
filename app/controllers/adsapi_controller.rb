@@ -39,14 +39,16 @@ class AdsapiController < ApplicationController
         report.click = 1
         report.totalcost = Ad.find(params[:ad_id]).price
         report.ctr = 1 / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).imp.to_f
-        report.cpm = 1000 * Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).totalcost.to_f / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).imp.to_f
+        report.cpm = 1000 * Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).totalcost.to_f / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).click.to_f
       else
         report.click += 1
         report.totalcost += Ad.find(params[:ad_id]).price
         report.ctr = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).click.to_f / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).imp.to_f
-        report.cpm = 1000 * Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).totalcost.to_f / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).imp.to_f
+        report.cpm = 1000 * Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).totalcost.to_f / Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id]).click.to_f
       end
         report.save
+
+#test branch
 
     else
       render status: 400, json: { status: 400, message: 'Not existed!' }
