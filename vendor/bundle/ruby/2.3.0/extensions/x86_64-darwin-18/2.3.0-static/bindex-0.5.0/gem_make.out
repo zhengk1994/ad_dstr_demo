@@ -1,0 +1,15 @@
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+/Users/zhengk1994/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20190523-8275-156kyua.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190523-8275-yjo9q3/bindex

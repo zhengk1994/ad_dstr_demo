@@ -1,0 +1,19 @@
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/byebug-11.0.1/ext/byebug
+/Users/zhengk1994/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20190523-8275-1r5gteu.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling locker.c
+compiling byebug.c
+compiling context.c
+compiling breakpoint.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190523-8275-13rtne5/byebug

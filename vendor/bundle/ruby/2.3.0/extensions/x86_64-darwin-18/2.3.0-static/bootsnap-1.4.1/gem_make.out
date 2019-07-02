@@ -1,0 +1,15 @@
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bootsnap-1.4.1/ext/bootsnap
+/Users/zhengk1994/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20190523-8275-wqxedp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bootsnap-1.4.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bootsnap-1.4.1/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/zhengk1994/ad_dstr_demo/newgrad_training/project/ad_management/vendor/bundle/ruby/2.3.0/gems/bootsnap-1.4.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190523-8275-18vqx7c/bootsnap
