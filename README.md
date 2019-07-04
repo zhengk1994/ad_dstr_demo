@@ -29,4 +29,4 @@
 
 ## 起動
 * `bundle exec bin/rails s`
-* ブラウザーでhttp://localhost:3000/users
+* ブラウザーでhttp://localhost:3000/media_site
