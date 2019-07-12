@@ -26,13 +26,19 @@
     <%= form.text_field :url %>
   </div>
 
+  <span class="picture">
+      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+
+
+    広告画像をアップロードしてください！
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
 
-  <span class="picture">
-      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
+
 
 <% end %>
 
