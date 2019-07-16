@@ -1,0 +1,2 @@
+module AdsapiHelper
+end
