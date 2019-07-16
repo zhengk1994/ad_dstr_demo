@@ -5,13 +5,11 @@ RSpec.describe "ads/index", type: :view do
     assign(:ads, [
       Ad.create!(
         :body => "Body1",
-        #:img => "Img1",
         :price => "30",
         :url => "Url1"
       ),
       Ad.create!(
         :body => "Body2",
-        #:img => "Img2",
         :price => "20",
         :url => "Url2"
       )

@@ -1,20 +1,21 @@
-# frozen_string_literal: true
-
 class AdsapiController < ApplicationController
   def click
+    array = []
+    ad = Ad.find(params[:ad_id])
     if report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
-      if report.click.nil?
-        report = Report.find_by(ad_id: params[:ad_id], adspot_id: params[:adspot_id])
-        report.click = 1
-      else
-        report.click += 1
-        report.totalcost += Ad.find(params[:ad_id]).price
-        report.save
+      report = Report.find_by(ad_id: ad.id, adspot_id: params[:adspot_id])
+      report ||= Report.new(ad_id: ad.id, adspot_id: params[:adspot_id])
+      array.push(
+        img_url: ad.picture.url,
+        body: ad.body,
+        ad_id: ad.id
+      )
 
-        render status: 400, json: { status: 400, message: 'Not existed!' }
-      end
+      render json: array # read out the json
 
-end
+    else
+      render status: 500, json: { status: 500, message: 'Not existed!' }
+    end
   end
 
   def view
@@ -31,5 +32,5 @@ end
       )
     end
     render json: array # read out the json
-end
+  end
 end
